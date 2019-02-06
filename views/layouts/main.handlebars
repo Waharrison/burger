@@ -1,18 +1,38 @@
-{{!-- * Setup the `main.handlebars` file so it's able to be used by Handlebars.
-
-     * Setup the `index.handlebars` to have the template that Handlebars can render onto.
-
-     * Create a button in `index.handlebars` that will submit the user input into the database. --}}
-
-     <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
 		<title>Burgers</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="../assets/css/burger_style.css" type="text/css" />
 		<script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
 	</head>
 	<body>
+        <div class="container text-center">
+            <br>
+            <img src="/assets/img/burger3.gif" alt="burger" class="burgerImage">
+             <h2>Devour A Burger!</h2>
+        </div>
+        <div class="container">
 		{{{ body }}}
+        <br>
+         <form action="burger/create" method="POST"> 
+        <div class="row">
+          <div class="col-md-3"></div> 
+          <div class="form-group col-md-6">
+            <center><label for="new_burger" class="red_font">Enter your own Burger</label></center>
+            <textarea class="form-control" columns="8" rows="4" id="new_burger" name="burger_name"></textarea>
+          </div>
+          <div class="col-md-3"></div> 
+        </div>
+        <center>
+          <button id="submit-button" type="submit" class="btn btn-danger">Submit</button>
+        </center>
+      </form>
+      <br>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        </div>
 	</body>
 </html>
